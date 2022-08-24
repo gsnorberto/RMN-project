@@ -1,30 +1,43 @@
 import './App.css';
+import {useState} from 'react';
 
 function App() {
+   const [name, setName] = useState('');
+   const [age, setAge] = useState(0);
+   const [country, setCountry] = useState('');
+   const [position, setPosition] = useState('');
+   const [wage, setWage] = useState(0);
+
+   const displayInfo = () => {
+      
+   }
+
    return (
       <div className="App">
-         <div>
+         <div className="information">
             <label>
-               Nome:
-               <input type="text" placeholder="Insira seu nome" />
+               Nome: <br/>
+               <input type="text" placeholder="Insira seu nome" onChange={(e) => setName(e.target.value)} />
             </label>
             <label>
-               idade:
-               <input type="number" placeholder="Insira sua idade" />
+               Idade: <br/>
+               <input type="number" placeholder="Insira sua idade" onChange={(e) => setAge(e.target.value)} />
             </label>
             <label>
-               País:
-               <input type="text" placeholder="Insira seu país" />
+               País: <br/>
+               <input type="text" placeholder="Insira seu país" onChange={(e) => setCountry(e.target.value)}/>
             </label>
             <label>
-               Cargo:
-               <input type="text" placeholder="Insira seu cargo" />
+               Cargo: <br/>
+               <input type="text" placeholder="Insira seu cargo" onChange={(e) => setPosition(e.target.value)}/>
             </label>
             <label>
-               Salário anual:
-               <input type="text" placeholder="Insira seu salário anual" />
+               Salário anual: <br/>
+               <input type="number" placeholder="Insira seu salário anual" onChange={(e) => setWage(e.target.value)}/>
             </label>
          </div>
+
+         <button>Adicionar empregado</button>
       </div>
    );
 }

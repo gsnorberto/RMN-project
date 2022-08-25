@@ -1,5 +1,8 @@
 import './App.css';
 import {useState} from 'react';
+import Axios from 'axios';
+
+const BASE_URL = 'http://localhost:3001'; //Backend URL
 
 function App() {
    const [name, setName] = useState('');
@@ -8,8 +11,13 @@ function App() {
    const [position, setPosition] = useState('');
    const [wage, setWage] = useState(0);
 
-   const displayInfo = () => {
-      
+   const addEmployee = () => {
+      Axios.post(
+         BASE_URL+'/create', 
+         { name, age, country, position, wage }
+      ).then(() => {
+         console.log("Success");
+      })
    }
 
    return (
@@ -37,7 +45,7 @@ function App() {
             </label>
          </div>
 
-         <button>Adicionar empregado</button>
+         <button onClick={addEmployee}>Adicionar empregado</button>
       </div>
    );
 }

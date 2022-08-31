@@ -21,11 +21,19 @@
   margin-bottom: 10px;
 }
 
-.App button {
+button {
   margin-top: 10px;
   width: 200px;
   height: 30px;
 }
-.App button:hover {
+button:hover {
    cursor: pointer;
+}
+
+.employees {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
 }
